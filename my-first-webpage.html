@@ -24,3 +24,37 @@
 
 </body>
 </html>
+
+
+
+
+function getCol(num) {
+
+  var row;//y
+  var col;
+  var colArray=[];
+
+  for (col=0;col<num;col++){
+    for (var i=2; i*i<num;i++){
+        row=i*i;//4,9,16,25,36,...
+      if (col*row<num){
+        colArray.push(col);
+      }
+    }
+  }
+  alert("the array is :"+colArray);
+
+  for(var j=colArray.length;j>0;j--){
+    if(colArray[j+1]-colArray[j]===0){
+        col=colArray[j]+1;
+        break;
+    }
+  }
+
+return col;
+}
+var num=177866;
+var x=getCol(num);
+var y=Math.ceil(num/x);
+alert("the col is : "+x+"the row is :"+y);
+//alert(y);
